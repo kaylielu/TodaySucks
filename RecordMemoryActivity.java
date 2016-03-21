@@ -9,6 +9,7 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 public class RecordMemoryActivity extends AppCompatActivity {
@@ -21,13 +22,12 @@ public class RecordMemoryActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         Intent intent = getIntent();
         String memory = intent.getStringExtra(Choose.EXTRA_MESSAGE);
+        Choose.memories.add(memory);
         TextView textView = new TextView(this);
         textView.setTextSize(40);
         textView.setText(memory);
-
         LinearLayout layout = (LinearLayout) findViewById(R.id.content);
         layout.addView(textView);
     }

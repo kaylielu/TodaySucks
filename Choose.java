@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.EditText;
+import java.util.ArrayList;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -19,6 +20,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class Choose extends AppCompatActivity {
 
     public final static String EXTRA_MESSAGE = "com.example.kaylie.todaysucks.MESSAGE";
+    public static ArrayList<String> memories = new ArrayList<>();
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -51,6 +53,13 @@ public class Choose extends AppCompatActivity {
         record.putExtra(EXTRA_MESSAGE, message);
         startActivity(record);
 
+
+    }
+
+    public void findMemory(View view){
+
+        Intent find = new Intent(this, DisplayMemoryActivity.class);
+        startActivity(find);
 
     }
 
